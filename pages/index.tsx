@@ -1,15 +1,16 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import { Hero } from '@components/hero/Hero';
 import { TeaserCompetences } from '@components/teasers/TeaserCompetences';
 import data from '../data/data.json';
 import { TeaserReferences } from '@components/teasers/TeaserReferences';
 import { TeaserMonthly } from '@components/teasers/TeaserMonthly';
 import { References } from '@components/references/References';
+import { IPage } from 'types';
 
-const Home: NextPage = () => {
+const Home: NextPage<IPage> = ({ name, teasers }) => {
   return (
     <div>
-      <Hero />
+      <Hero imageUrl={data.home.hero.imageUrl} text={data.home.hero.text} />
       {/* <Grid /> */}
       <TeaserCompetences
         heading={data.home.competences.heading}
@@ -32,3 +33,5 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+// export async function getStaticProps() {}

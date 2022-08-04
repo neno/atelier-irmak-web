@@ -1,15 +1,19 @@
 {
   "home": {
+    "hero": {
+      "imageUrl": "/images/Teppiche-Coninx0638.jpg",
+      "text": "Die Referenz in Bern für Teppiche & Kelims.\nSeit 1985."
+    },
     "competences": {
       "heading": "Wir wecken Räume mit Leidenschaft und Professionalität.",
       "image": {
-        "url": "/images/sleeping-room.jpg",
+        "url": "/images/Teppich-Laenggasse0338.jpg",
         "altText": "Some alt text",
         "position": "right bottom"
       },
       "text": {
         "title": "Unsere Kompetenzen",
-        "body": "Bei teo jakob stehen Ihnen ausgewiesene Experten in allen Bereichen rund ums Wohnen zur Verfügung. Ob Beratung zu Einrichtung, Textil, Licht, Farbe oder Innenarchitektur – Ihre Wünsche und Ideen sind unsere Inspiration."
+        "body": "Mit seiner ausgewiesenen Expertise steht das Atelier Irmak in allen Bereich des textilen Designs seinen Kunden zur Verfügung. Gerne Beraten wir Sie, welcher Teppich am besten zu Ihren Möbeln passt und Ihr Ambiente bereichert. Benötigen Sie eine fachgerechte Reparatur, Restaurierung oder Reinigung? Gerne nehmen wir uns in traditioneller Handarbeit Ihres Kleinods an."
       }
     },
     "referenceTeaser": {
@@ -21,12 +25,12 @@
       },
       "text": {
         "title": "Unsere Referenzen",
-        "body": "Zahlreiche Projekte für Private, Unternehmen und im Bereich Innenarchitektur wurden von teo jakob geprägt. Mit oder ohne bauliche Massnahmen, mit ausgewählten Möbeln und individuellen Accessoires. Neugierig? Lassen Sie sich inspirieren."
+        "body": "Ob repräsentatives Sitzungszimmer, stilvolles Wohnzimmer oder gemütliches Schlafzimmer:  mit einem textilen Konzept erwecken wir Ihre Räumlichkeiten zum Leben und bringen Wohnlichkeit in Ihre Zimmer. Lassen Sie sich inspirieren."
       }
     },
     "flyingRug": {
       "image": {
-        "url": "/images/outdoor.jpg",
+        "url": "/images/Teppich-Sieber0446.jpg",
         "altText": "rug1",
         "position": "center center"
       },
