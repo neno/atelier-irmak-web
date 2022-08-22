@@ -1,13 +1,13 @@
 {
   "home": {
     "hero": {
-      "imageUrl": "/images/Teppiche-Coninx0638.jpg",
+      "imageUrl": "/images/Coninx0638.jpg",
       "text": "Die Referenz in Bern für Teppiche & Kelims.\nSeit 1985."
     },
     "competences": {
       "heading": "Wir wecken Räume mit Leidenschaft und Professionalität.",
       "image": {
-        "url": "/images/Teppich-Laenggasse0338.jpg",
+        "url": "/images/Laenggasse0338.jpg",
         "altText": "Some alt text",
         "position": "right bottom"
       },
@@ -30,7 +30,7 @@
     },
     "flyingRug": {
       "image": {
-        "url": "/images/Teppich-Sieber0446.jpg",
+        "url": "/images/Sieber0446.jpg",
         "altText": "rug1",
         "position": "center center"
       },
