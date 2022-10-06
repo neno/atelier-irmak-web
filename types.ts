@@ -3,6 +3,7 @@ export interface IPage {
   heroImage: IAsset;
   teasersCollection: TeasersCollection;
   latestReferencesCollection: IReferenceCollection;
+  flyingCarpetSection: IReferenceItem;
 }
 
 export interface IReferenzenPage {
@@ -41,7 +42,7 @@ export interface TeasersCollection {
   items: TeasersCollectionItem[];
 }
 
-export type TeaserType = 'Kompetenz' | 'Referenz';
+export type TeaserType = 'Kompetenz' | 'Referenz' | 'Der fliegende Teppich';
 
 export interface TeasersCollectionItem {
   slug: string;

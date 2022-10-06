@@ -15,15 +15,13 @@ const TeaserImage: FC<ITeaserImageProps> = ({
 }) => {
   const src = changeImageFormat(imageUrl);
   return (
-    <div>
-      <Image
-        src={src}
-        alt={altText}
-        layout='fill'
-        objectFit='cover'
-        objectPosition={position}
-      />
-    </div>
+    <Image
+      src={src}
+      alt={altText}
+      layout='fill'
+      objectFit='cover'
+      objectPosition={position}
+    />
   );
 };
 

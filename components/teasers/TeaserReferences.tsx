@@ -1,7 +1,7 @@
 import { FC } from 'react';
+import { ITeaserProps } from './Teaser.types';
 import TeaserHeading from './TeaserHeading';
 import TeaserImage from './TeaserImage';
-import { ITeaserProps } from './Teaser';
 
 export const TeaserReferences: FC<ITeaserProps> = ({
   slug,

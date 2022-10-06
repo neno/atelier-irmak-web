@@ -13,10 +13,12 @@ const CarouselImage: FC<IFixedSizedAsset> = ({
     <Image
       src={url}
       alt={description}
-      width={width}
-      height={height}
-      layout={layout}
-      objectFit='contain'
+      // width={width}
+      // height={height}
+      // layout={layout}
+      layout='fill'
+      objectFit={width > height ? 'cover' : 'contain'}
+      objectPosition={`bottom right`}
     />
   );
   // return (

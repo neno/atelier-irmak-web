@@ -1,20 +1,14 @@
 import React, { FC } from 'react';
 import { TeaserType } from 'types';
+import { ITeaserProps, TeaserComponentType } from './Teaser.types';
 import { TeaserCompetences } from './TeaserCompetences';
+import { TeaserMonthly } from './TeaserMonthly';
 import { TeaserReferences } from './TeaserReferences';
 
-export interface ITeaserProps {
-  slug: string;
-  type: TeaserType;
-  title: string;
-  subtitle: string;
-  excerpt: string;
-  image: {
-    url: string;
-    description: string;
-    position: string;
-  };
-}
+const TeaserMap = new Map<TeaserType, TeaserComponentType>();
+TeaserMap.set('Kompetenz', TeaserCompetences);
+TeaserMap.set('Referenz', TeaserReferences);
+TeaserMap.set('Der fliegende Teppich', TeaserMonthly);
 
 const Teaser: FC<ITeaserProps> = ({
   type,
@@ -24,26 +18,10 @@ const Teaser: FC<ITeaserProps> = ({
   excerpt,
   image: { url, description, position = 'right bottom' },
 }) => {
-  if (type === 'Kompetenz') {
+  const TeaserComponent = TeaserMap.get(type);
+  if (TeaserComponent) {
     return (
-      <TeaserCompetences
-        type={type}
-        slug={slug}
-        image={{
-          url,
-          description,
-          position,
-        }}
-        title={title}
-        subtitle={subtitle}
-        excerpt={excerpt}
-      />
-    );
-  }
-
-  if (type === 'Referenz') {
-    return (
-      <TeaserReferences
+      <TeaserComponent
         type={type}
         slug={slug}
         image={{

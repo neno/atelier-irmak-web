@@ -11,6 +11,7 @@ SwiperCore.use([Navigation, Pagination, A11y]);
 
 interface IProps {
   children: ReactNode;
+  sliderHeight?: number;
   slidesPerView?: number | 'auto';
   spaceBetween?: number;
   breakpoints?: {};
@@ -18,6 +19,7 @@ interface IProps {
 
 export const Carousel: React.FunctionComponent<IProps> = ({
   children,
+  sliderHeight = 565,
   slidesPerView = 1,
   spaceBetween = 0,
   breakpoints = false,
@@ -29,29 +31,27 @@ export const Carousel: React.FunctionComponent<IProps> = ({
   return (
     <>
       {children && (
-        <div
-          className={clsxm('container mx-auto pb-12 w-full h-[565px] relative')}
-        >
-          <button
+        <div className='relative w-full h-full'>
+          {/* <button
             type='button'
             className={styles.btn}
             ref={navPrevButton}
             aria-label='Previous slide'
           >
-            {/* <ChevronLeftIcon fontSize='large' /> */}
-          </button>
-          <button
+            <ChevronLeftIcon fontSize='large' />
+          </button> */}
+          {/* <button
             type='button'
             className={styles.btn}
             ref={navNextButton}
             aria-label='Next slide'
           >
-            {/* <ChevronRightIcon fontSize='large' /> */}
-          </button>
+            <ChevronRightIcon fontSize='large' />
+          </button> */}
           <Swiper
             className='w-full h-full bg-gray'
-            slidesPerView={'auto'}
-            spaceBetween={16}
+            slidesPerView={slidesPerView}
+            spaceBetween={spaceBetween}
             // breakpoints={{}}
             // navigation={{
             //   prevEl: navPrevButton?.current,

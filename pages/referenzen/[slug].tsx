@@ -11,6 +11,8 @@ import CarouselImage from '@components/carousel/CarouselImage';
 import { imageWidth } from 'lib/helpers';
 import { LeadText } from '@components/lead-text/LeadText';
 import { ContentContainer } from '@components/content-container';
+import { TeaserTopic } from '@components/teasers/TeaserTopic';
+import { ReferencePageHeader } from '@components/reference-page-header/ReferencePageHeader';
 
 const ReferenceDetailPage: NextPage<IReference> = ({
   title,
@@ -20,7 +22,9 @@ const ReferenceDetailPage: NextPage<IReference> = ({
   const sliderHeight = 565;
   return (
     <>
-      <Carousel slidesPerView='auto' spaceBetween={16}>
+      <ReferencePageHeader text={excerpt} assets={items} />
+      {/* <TeaserTopic /> */}
+      {/* <Carousel slidesPerView='auto' spaceBetween={16}>
         {items.map(({ url, title, description, width, height }) => (
           // <CarouselSlide
           //   key={url}
@@ -47,7 +51,7 @@ const ReferenceDetailPage: NextPage<IReference> = ({
             />
           </SwiperSlide>
         ))}
-      </Carousel>
+      </Carousel> */}
       <PageHeading heading={title} />
       <ContentContainer>
         <LeadText text={excerpt} />

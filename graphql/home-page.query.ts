@@ -22,6 +22,9 @@ export const homePageQuery = `
           ${referenceItem}
         }
       }
+      flyingCarpetSection {
+        ${referenceItem}
+      }
     }
   }
 `;

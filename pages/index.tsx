@@ -6,7 +6,13 @@ import { fetchHomePage } from 'lib/api';
 import Teaser from '@components/teasers/Teaser';
 
 const Home: NextPage<{ page: IPage }> = ({
-  page: { heroImage, heading, teasersCollection, latestReferencesCollection },
+  page: {
+    heroImage,
+    heading,
+    teasersCollection,
+    latestReferencesCollection,
+    flyingCarpetSection,
+  },
 }) => {
   return (
     <>
@@ -37,6 +43,19 @@ const Home: NextPage<{ page: IPage }> = ({
       {latestReferencesCollection.items.length > 0 && (
         <References references={latestReferencesCollection.items} />
       )}
+
+      <Teaser
+        type='Der fliegende Teppich'
+        slug={flyingCarpetSection.slug}
+        title={flyingCarpetSection.title}
+        subtitle={flyingCarpetSection.subtitle}
+        excerpt={flyingCarpetSection.excerpt}
+        image={{
+          url: flyingCarpetSection.featuredImage.url,
+          description: flyingCarpetSection.featuredImage.description,
+          position: 'center center',
+        }}
+      />
     </>
   );
 };

@@ -4,7 +4,7 @@ import clsxm from 'lib/clsxm';
 import styles from './TeaserCompetences.module.css';
 import TeaserHeading from './TeaserHeading';
 import TeaserImage from './TeaserImage';
-import { ITeaserProps } from './Teaser';
+import { ITeaserProps } from './Teaser.types';
 
 export const TeaserCompetences: FC<ITeaserProps> = ({
   slug,

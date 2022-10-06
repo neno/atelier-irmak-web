@@ -1,56 +1,48 @@
 import { FC } from 'react';
 import Image from 'next/image';
+import { textWithLineBreak } from 'lib/helpers';
+import { LinkWrapper } from '@components/link-wrapper/LinkWrapper';
+import { ITeaserProps } from './Teaser.types';
 
-interface ITeaserMonthlyProps {
-  heading?: string;
-  text: {
-    title?: string;
-    body?: string;
-  };
-  image: {
-    url: string;
-    altText: string;
-    position: string;
-  };
-}
-
-export const TeaserMonthly: FC<ITeaserMonthlyProps> = ({
-  heading,
-  text,
-  image,
+export const TeaserMonthly: FC<ITeaserProps> = ({
+  slug,
+  title,
+  subtitle,
+  excerpt,
+  image: { url, description, position = 'right bottom' },
 }) => {
   return (
     <div className='w-full bg-gray pt-12 mt-12'>
       <div className='container mx-auto grid'>
         <header className='md:col-span-7 lg:col-span-6 mx-4 mb-12'>
           <h2 className='text-4xl lg:text-5xl text-primary leading-tight lg:leading-tight'>
-            {heading}
+            Der Fliegende Teppich
           </h2>
         </header>
       </div>
 
-      <div className='relative before:block content-["*"] before:absolute before:top-0 before:left-0 md:before:bg-white before:h-[100%] before:w-[50%] z-1 overflow-hidden border-b-[2rem] md:border-b-[4rem] border-gray'>
+      <div className='relative pb-8 md:pb-16'>
         <div className='container mx-auto'>
           <div className='md:grid grid-cols-2 '>
-            <div className='relative m-4 bg-white'>
-              <div className='relative aspect-[4/3]'>
+            <div className='relative border-[1rem] border-white aspect-[4/3]'>
+              <LinkWrapper slug={slug}>
                 <Image
-                  src={image.url}
+                  src={url}
                   className=''
-                  alt={image.altText}
+                  alt={description}
                   layout='fill'
                   objectFit='cover'
-                  objectPosition={image.position}
+                  objectPosition={position}
                 />
-              </div>
+              </LinkWrapper>
             </div>
             <div className='px-8 bg-gray flex flex-col justify-end'>
-              {text?.title && (
+              <LinkWrapper slug={slug}>
                 <h2 className='text-primary text-3xl lg:text-4xl pb-4 leading-tight lg:leading-tight'>
-                  {text?.title}
+                  {title}: {subtitle}
                 </h2>
-              )}
-              <p>{text.body}</p>
+              </LinkWrapper>
+              <p>{textWithLineBreak(excerpt)}</p>
             </div>
           </div>
         </div>
