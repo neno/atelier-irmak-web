@@ -1,13 +1,17 @@
 import { Module } from '@components/layout/Module';
 import { FC } from 'react';
 import Image from 'next/image';
+import { changeImageFormat } from 'lib/helpers';
+import Link from 'next/link';
 
 interface IReference {
+  slug: string;
   title: string;
-  text: string;
-  image: {
+  subtitle: string;
+  excerpt: string;
+  featuredImage: {
     url: string;
-    altText: string;
+    description: string;
     position?: string;
   };
 }
@@ -20,20 +24,31 @@ export const References: FC<IReferencesProps> = ({ references }) => {
   return (
     <Module>
       <div className='grid grid-cols-3 gap-8'>
-        {references.map((reference) => (
-          <div key={reference.image.url}>
+        {references.map(({ title, slug, subtitle, excerpt, featuredImage }) => (
+          <div key={featuredImage.url}>
             <div className='relative aspect-square'>
-              <Image
-                src={reference.image.url}
-                alt={reference.image.altText}
-                layout='fill'
-                objectFit='cover'
-                objectPosition={reference.image.position ?? 'center center'}
-              />
+              {featuredImage && (
+                <Link href={`/referenzen/${slug}`}>
+                  <a>
+                    <Image
+                      src={changeImageFormat(featuredImage.url)}
+                      alt={featuredImage.description}
+                      layout='fill'
+                      objectFit='cover'
+                      objectPosition={featuredImage.position ?? 'center center'}
+                    />
+                  </a>
+                </Link>
+              )}
             </div>
             <div className='p-4'>
-              <h3 className='py-4 text-2xl text-primary'>{reference.title}</h3>
-              <p>{reference.text}</p>
+              <Link href={`/referenzen/${slug}`}>
+                <a>
+                  <h3 className='py-4 text-2xl text-primary'>{title}</h3>
+                </a>
+              </Link>
+              <h4 className='sr-only'>{subtitle}</h4>
+              <p>{excerpt}</p>
             </div>
           </div>
         ))}

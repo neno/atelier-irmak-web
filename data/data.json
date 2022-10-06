@@ -17,7 +17,7 @@
       }
     },
     "referenceTeaser": {
-      "heading": "Wir verbinden Wohnlichkeit und Design.",
+      "heading": "Wir verbinden Wohnlichkeit mit Design.",
       "image": {
         "url": "/images/Teppiche-Coninx0684.jpg",
         "altText": "Some alt text",
@@ -42,7 +42,7 @@
     },
     "references": [
       {
-        "title": "Ein Praxiszimmer",
+        "title": "Ein Praxiszimmer - edel und heimelig",
         "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt modi minus dicta laborum itaque impedit! Voluptate odit doloribus temporibus nobis explicabo rem, animi doloremque voluptatem sed reprehenderit id quisquam dolor.",
         "image": {
           "url": "/images/Teppich-Coninx-Praxis0867.jpg",
@@ -50,7 +50,7 @@
         }
       },
       {
-        "title": "Ein Bad",
+        "title": "Ein Bad für alle Jahreszeiten",
         "text": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt modi minus dicta laborum itaque impedit! Voluptate odit doloribus temporibus nobis explicabo rem.",
         "image": {
           "url": "/images/Teppiche-Coninx0764.jpg",
@@ -58,7 +58,7 @@
         }
       },
       {
-        "title": "Ein Entrée",
+        "title": "Ein Entrée zum Verweilen",
         "text": "Incidunt modi minus dicta laborum itaque impedit! Voluptate odit doloribus temporibus nobis explicabo rem, animi doloremque voluptatem sed reprehenderit id quisquam dolor.",
         "image": {
           "url": "/images/Teppiche-Coninx0700.jpg",

@@ -1,27 +1,17 @@
 import { Module } from '@components/layout/Module';
-import Image from 'next/image';
 import { FC } from 'react';
 import clsxm from 'lib/clsxm';
 import styles from './TeaserCompetences.module.css';
-
-interface ITeaserProps {
-  heading?: string;
-  backgroundColor?: string;
-  text: {
-    title?: string;
-    body?: string;
-  };
-  image: {
-    url: string;
-    altText: string;
-    position: string;
-  };
-}
+import TeaserHeading from './TeaserHeading';
+import TeaserImage from './TeaserImage';
+import { ITeaserProps } from './Teaser';
 
 export const TeaserCompetences: FC<ITeaserProps> = ({
-  heading,
-  text,
-  image,
+  slug,
+  title,
+  subtitle,
+  excerpt,
+  image: { url, description, position },
 }) => {
   return (
     <div className='w-full py-12'>
@@ -32,11 +22,9 @@ export const TeaserCompetences: FC<ITeaserProps> = ({
         )}
       >
         <Module>
-          {heading && (
+          {title && (
             <header className='lg:w-[75%] mx-4 mb-8 md:mb-0 lg:mb-8 2xl:w-[62.5%]'>
-              <h2 className='text-4xl lg:text-5xl text-primary leading-tight lg:leading-tight'>
-                {heading}
-              </h2>
+              <TeaserHeading heading={title} />
             </header>
           )}
           <div className={clsxm('relative z-2', styles.teaser)}>
@@ -46,24 +34,23 @@ export const TeaserCompetences: FC<ITeaserProps> = ({
                 styles.teaserImg
               )}
             >
-              <Image
-                src={image.url}
-                className=''
-                alt={image.altText}
-                layout='fill'
-                objectFit='cover'
-                objectPosition={image.position}
-              />
+              {url && (
+                <TeaserImage
+                  imageUrl={url}
+                  altText={description}
+                  position={position}
+                />
+              )}
             </div>
             <div
               className={clsxm(styles.teaserText, 'flex flex-col justify-end')}
             >
-              {text?.title && (
-                <h2 className='text-primary text-3xl lg:text-4xl p-4 pt-8 md:pt-4 leading-tight lg:leading-tight'>
-                  {text?.title}
-                </h2>
+              {subtitle && (
+                <h3 className='text-primary text-3xl lg:text-4xl p-4 pt-8 md:pt-4 leading-tight lg:leading-tight'>
+                  {subtitle}
+                </h3>
               )}
-              {text?.body && <p className='p-4 md:pb-0'>{text?.body}</p>}
+              {excerpt && <p className='p-4 md:pb-0'>{excerpt}</p>}
             </div>
           </div>
         </Module>

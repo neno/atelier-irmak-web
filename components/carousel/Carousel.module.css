@@ -1,0 +1,16 @@
+.wrapper {
+  /* height: 640px;
+  background-color: green; */
+}
+
+.btn {
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+}
+
+.slide > * {
+  flex: 1 1 0;
+}

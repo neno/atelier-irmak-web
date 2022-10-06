@@ -1,15 +1,17 @@
-import { Module } from '@components/layout/Module';
-import clsxm from 'lib/clsxm';
-import Image from 'next/image';
 import { FC } from 'react';
+import Image from 'next/image';
+import clsxm from 'lib/clsxm';
 import styles from './Hero.module.css';
+import { changeImageFormat, textWithLineBreak } from 'lib/helpers';
 
 interface HeroProps {
+  heading: string;
   imageUrl: string;
-  text: string;
+  alText: string;
 }
 
-export const Hero: FC<HeroProps> = ({ imageUrl, text }) => {
+export const Hero: FC<HeroProps> = ({ heading, imageUrl, alText }) => {
+  const img = changeImageFormat(imageUrl);
   return (
     <div className={clsxm('container mx-auto relative', styles.hero)}>
       <div
@@ -17,17 +19,13 @@ export const Hero: FC<HeroProps> = ({ imageUrl, text }) => {
           styles.heroImg,
           'relative',
           'aspect-square',
-          'md:aspect-[5/3]'
+          'md:aspect-[2/1]'
         )}
       >
         <Image
-          // src='/images/Teppich-Laenggasse0338.jpg'
-          // src='/images/Teppich-Brcic0324.jpg'
-          // src='/images/Teppich-Born0054-2.jpg'
-          // src='/images/Sunrise-v5-Ghashghai-meets-Bauhaus-SoFar-SoNear-Studio-for-Zollanvari.jpeg'
-          src={imageUrl}
+          src={img}
           className=''
-          alt='Some alt text'
+          alt={alText}
           layout='fill'
           objectFit='cover'
           objectPosition='right bottom'
@@ -38,13 +36,12 @@ export const Hero: FC<HeroProps> = ({ imageUrl, text }) => {
           styles.heroCaption,
           'bg-primary',
           'opacity-90',
-          'p-8 lg:p-8 2xl:p-16',
-          // 'p-6',
+          'p-8 lg:p-8 xl:p-12 2xl:p-16',
           'text-white text-xl lg:text-3xl font-title leading-relaxed lg:leading-tight',
           'flex items-center justify-content-center self-center'
         )}
       >
-        <p>{text}</p>
+        <p dangerouslySetInnerHTML={{ __html: textWithLineBreak(heading) }} />
       </div>
     </div>
   );
