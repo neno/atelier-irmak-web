@@ -6,7 +6,7 @@ interface ITeaserHeadingProps {
 
 const TeaserHeading: FC<ITeaserHeadingProps> = ({ heading }) => {
   return (
-    <h2 className='text-4xl lg:text-5xl text-primary leading-tight lg:leading-tight'>
+    <h2 className='text-4xl lg:text-5xl leading-tight lg:leading-tight'>
       {heading}
     </h2>
   );

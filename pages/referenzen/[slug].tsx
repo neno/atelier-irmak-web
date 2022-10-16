@@ -13,49 +13,60 @@ import { LeadText } from '@components/lead-text/LeadText';
 import { ContentContainer } from '@components/content-container';
 import { TeaserTopic } from '@components/teasers/TeaserTopic';
 import { ReferencePageHeader } from '@components/reference-page-header/ReferencePageHeader';
+import { RugDefList } from '@components/rug-def-list/RugDefList';
+import Rug from '@components/rug/Rug';
+
+const defList: Map<string, string> = new Map();
+defList.set('name', 'Verneh Kelim');
+defList.set('origin', 'Aserbaidschan');
+defList.set('size', '200x170 cm');
+defList.set('age', '1940 - 1950');
+defList.set('location', 'Villa, Neuenburgersee');
+defList.set('room', 'Schlafzimmer');
+defList.set('placing', 'vor dem Bett');
 
 const ReferenceDetailPage: NextPage<IReference> = ({
   title,
+  subtitle,
   excerpt,
-  galleryCollection: { items },
+  body,
+  definition,
+  detailImage,
+  galleryItems,
 }) => {
   const sliderHeight = 565;
+
+  // return (
+  //   <pre>
+  //     {JSON.stringify(
+  //       {
+  //         title,
+  //         subtitle,
+  //         excerpt,
+  //         body,
+  //         definition,
+  //         detailImage,
+  //         galleryItems,
+  //       },
+  //       null,
+  //       2
+  //     )}
+  //   </pre>
+  // );
+
   return (
     <>
-      <ReferencePageHeader text={excerpt} assets={items} />
-      {/* <TeaserTopic /> */}
-      {/* <Carousel slidesPerView='auto' spaceBetween={16}>
-        {items.map(({ url, title, description, width, height }) => (
-          // <CarouselSlide
-          //   key={url}
-          //   url={url}
-          //   title={title}
-          //   description={description}
-          //   width={width}
-          //   height={height}
-          // />
-          <SwiperSlide
-            key={url}
-            style={{
-              width: `${imageWidth(sliderHeight, width, height)}px`,
-              height: `${sliderHeight}px`,
-              backgroundColor: 'orange',
-            }}
-          >
-            <CarouselImage
-              url={url}
-              title={title}
-              description={description}
-              width={imageWidth(sliderHeight, width, height)}
-              height={sliderHeight}
-            />
-          </SwiperSlide>
-        ))}
-      </Carousel> */}
-      <PageHeading heading={title} />
-      <ContentContainer>
-        <LeadText text={excerpt} />
-      </ContentContainer>
+      <ReferencePageHeader
+        heading={title}
+        assets={galleryItems}
+        definition={definition}
+      />
+
+      <LeadText text={excerpt} />
+      {/* <ContentContainer>
+        <RugDefList items={definition} />
+      </ContentContainer> */}
+      <Rug body={body} detailImage={detailImage} />
     </>
   );
 };
@@ -66,7 +77,7 @@ export const getStaticPaths = async () => {
   const {
     referenceCollection: { items },
   } = await fetchReferencePaths();
-  console.log(items);
+  // console.log(items);
 
   const paths = items?.map((item) => ({
     params: {
@@ -78,8 +89,8 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }: { params: any }) => {
-  const item = await getReferenceBySlug(params.slug);
-  console.log(item);
+  const reference = await getReferenceBySlug(params.slug);
+  // console.log(item);
 
-  return { props: item };
+  return { props: reference };
 };

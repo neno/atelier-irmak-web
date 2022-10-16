@@ -12,7 +12,8 @@ specifiers:
   contentful-typescript-codegen: ^3.2.3
   eslint: 8.15.0
   eslint-config-next: 12.1.6
-  framer-motion: ^6.3.3
+  feather-icons-react: ^0.5.0
+  framer-motion: ^6.5.1
   graphql: ^16.5.0
   next: 12.1.6
   postcss: ^8.4.13
@@ -27,6 +28,7 @@ dependencies:
   '@apollo/client': 3.6.9_ila5be2toiy6xjqjieu6owlh24
   clsx: 1.2.1
   contentful: 9.1.34
+  feather-icons-react: 0.5.0
   framer-motion: 6.5.1_ef5jwxihqo6n7gxfmzogljlgcm
   graphql: 16.6.0
   next: 12.1.6_ef5jwxihqo6n7gxfmzogljlgcm
@@ -1352,6 +1354,10 @@ packages:
     dependencies:
       reusify: 1.0.4
     dev: true
+
+  /feather-icons-react/0.5.0:
+    resolution: {integrity: sha512-k7y6JnghcwLi3uo5SaSnnngfHOE+IPpAFzlsmNhlXwbP8jev2rOYbEq1g5lhMglbV934KhcaSbo3DYV32I3/Ug==}
+    dev: false
 
   /file-entry-cache/6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}

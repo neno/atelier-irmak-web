@@ -15,7 +15,6 @@ export const CarouselSlide: FC<IAsset> = ({
 }) => {
   const sliderHeight = 565;
   const sliderWidth = imageWidth(sliderHeight, width, height);
-  console.log({ sliderWidth, sliderHeight });
 
   return (
     <SwiperSlide

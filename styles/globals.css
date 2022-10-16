@@ -5,23 +5,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Lora&family=Nunito&family=Playfair+Display&display=swap');
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  /* font-weight: 100; */
-  overflow-x: hidden;
+  @apply text-primary overflow-x-hidden;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'ivymode', sans-serif;
-  color: #333D98
-  /* color: #6c563a */
+a {
+  @apply text-primary;
 }
 
-h3,h4,h5,h6 {
-  color: #12184D
-  /* color: #6c563a */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-title;
 }

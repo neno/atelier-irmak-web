@@ -15,7 +15,7 @@ export const TeaserTopic = () => {
       >
         <div className='z-1 relative w-full h-full bg-white'></div>
         <div className='bg-gray w-full h-full grid content-center justify-center'>
-          <div className='p-16 text-xl lg:text-3xl leading-normal lg:leading-normal bg-gray text-primary font-title'>
+          <div className='p-16 text-xl lg:text-3xl leading-normal lg:leading-normal bg-gray font-title'>
             Blaue Stunden in Traum und Schlaf: Verneh Kelim aus Aserbaidschan,
             193x125cm, um 1900
           </div>
@@ -24,9 +24,3 @@ export const TeaserTopic = () => {
     </ContentContainer>
   );
 };
-
-// clsxm(
-//   'relative bg-gray',
-//   'before:block content-["*"] before:absolute before:top-[50%] before:left-0 before:bg-white before:h-[100%] before:w-[66.67%] lg:before:w-[50%] z-1 overflow-hidden'
-// );
-// Wie ein blauer Teich mit Steg, in dem geometrische Blasen an die Oberfläche blubbern, liegt der Verneh Kelim aus Aserbaidschan ruhig und still vor dem Bett und untermalt das mit sanftem Licht durchflutete Schlafzimmer.

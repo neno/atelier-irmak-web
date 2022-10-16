@@ -3,12 +3,14 @@ import { referencePageQuery } from 'graphql/reference-page.query';
 import { referencePathsQuery } from 'graphql/reference-paths.query';
 import {
   IPage,
+  IReference,
   IReferenceCollection,
   IReferenceItem,
   IReferencePaths,
   IReferenzenPage,
 } from 'types';
 import { homePageQuery } from '../graphql/home-page.query';
+import { mapDataToReference } from './helpers';
 
 const headers = {
   Authorization: `Bearer ${process.env.CONTENTFUL_API_KEY}`,
@@ -53,9 +55,11 @@ export async function fetchReferencePaths(): Promise<IReferencePaths> {
 
 export async function getReferenceBySlug(
   slug: string
-): Promise<IReferenceItem> {
+): Promise<IReference> {
   const query = getReferenceBySlugQuery(slug);
+  const {
+    referenceCollection: { items },
+  } = await fetchData(query);
 
-  const {referenceCollection: {items}} = await fetchData(query);
-  return items?.[0];
+  return mapDataToReference(items?.[0]);
 }

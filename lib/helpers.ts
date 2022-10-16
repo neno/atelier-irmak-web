@@ -1,3 +1,9 @@
+import i18n from '@data/i18n.json';
+import {
+  IReference,
+  IReferenceQueryData,
+} from 'types';
+
 export function changeImageFormat(imageUrl: string, format = 'webp'): string {
   return `${imageUrl}?fm=${format}`;
 }
@@ -13,3 +19,41 @@ export const imageWidth = (
 ): number => {
   return Math.round((imageWidth * sliderHeight) / imageHeight);
 };
+
+export function t(key: string): string {
+  const translation = (i18n as Record<string, string>)[key];
+  return translation ?? '';
+}
+
+export function mapDataToReference(data: IReferenceQueryData): IReference {
+  const {
+    title,
+    subtitle,
+    excerpt,
+    location,
+    room,
+    placing,
+    rug,
+    galleryCollection: {items},
+  } = data;
+  const { name, text, origin, size, age, detailImage } = rug;
+  const defList = {
+    location,
+    room,
+    placing,
+    name,
+    origin,
+    size,
+    age,
+  };
+
+  return {
+    title,
+    subtitle,
+    excerpt,
+    body: text,
+    definition: defList,
+    detailImage: detailImage,
+    galleryItems: items,
+  };
+}

@@ -8,7 +8,6 @@ export const getReferenceBySlugQuery = (slug: string) => `
           title
           subtitle
           excerpt
-          body
           location
           room
           placing
@@ -17,7 +16,16 @@ export const getReferenceBySlugQuery = (slug: string) => `
               name
               text
               origin
+              size
+              age
               palette
+              detailImage {
+                url
+                description
+                title
+                width
+                height
+              }
             }
           }
           galleryCollection {

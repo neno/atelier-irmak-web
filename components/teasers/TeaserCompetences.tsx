@@ -5,6 +5,9 @@ import styles from './TeaserCompetences.module.css';
 import TeaserHeading from './TeaserHeading';
 import TeaserImage from './TeaserImage';
 import { ITeaserProps } from './Teaser.types';
+import { LinkWrapper } from '@components/link-wrapper/LinkWrapper';
+import { LinkButton } from '@components/buttons';
+import { ContentContainer } from '@components/content-container';
 
 export const TeaserCompetences: FC<ITeaserProps> = ({
   slug,
@@ -14,7 +17,7 @@ export const TeaserCompetences: FC<ITeaserProps> = ({
   image: { url, description, position },
 }) => {
   return (
-    <div className='w-full py-12'>
+    <div className='w-full py-16'>
       <div
         className={clsxm(
           'relative bg-gray',
@@ -22,35 +25,36 @@ export const TeaserCompetences: FC<ITeaserProps> = ({
         )}
       >
         <Module>
-          {title && (
-            <header className='lg:w-[75%] mx-4 mb-8 md:mb-0 lg:mb-8 2xl:w-[62.5%]'>
-              <TeaserHeading heading={title} />
-            </header>
-          )}
+          <header className='lg:w-[75%] mx-4 mb-8 md:mb-0 lg:mb-8 2xl:w-[62.5%]'>
+            <TeaserHeading heading={title} />
+          </header>
           <div className={clsxm('relative z-2', styles.teaser)}>
             <div
               className={clsxm(
-                'relative p-4 relative aspect-[4/3] md:aspect-square lg:aspect-[4/3]',
+                'relative p-4 relative aspect-[4/3] md:aspect-square lg:aspect-[4/3] shadow-xl shadow-slate-300',
                 styles.teaserImg
               )}
             >
-              {url && (
-                <TeaserImage
-                  imageUrl={url}
-                  altText={description}
-                  position={position}
-                />
-              )}
+              <TeaserImage
+                imageUrl={url}
+                altText={description}
+                position={position}
+              />
             </div>
             <div
               className={clsxm(styles.teaserText, 'flex flex-col justify-end')}
             >
-              {subtitle && (
-                <h3 className='text-primary text-3xl lg:text-4xl p-4 pt-8 md:pt-4 leading-tight lg:leading-tight'>
+              <LinkWrapper path='/kompetenzen'>
+                <h3 className='text-3xl lg:text-4xl p-4 pt-8 md:pt-4 leading-tight lg:leading-tight'>
                   {subtitle}
                 </h3>
-              )}
-              {excerpt && <p className='p-4 md:pb-0'>{excerpt}</p>}
+              </LinkWrapper>
+              <p className='p-4 md:pb-0'>{excerpt}</p>
+              <p className='p-4 pb-0'>
+                <LinkButton path='/kompetenzen'>
+                  Lassen Sie sich überzeugen
+                </LinkButton>
+              </p>
             </div>
           </div>
         </Module>

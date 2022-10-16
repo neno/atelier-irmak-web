@@ -59,23 +59,54 @@ export interface IReferencePaths {
   };
 }
 
-export interface IReference {
+export interface IReferenceQueryData {
   title: string;
   subtitle: string;
   excerpt: string;
   body: string;
   location: string;
   room: string;
-  placing: string;
-  rug: IRug;
+  placing: string | null;
+  rug: {
+    name: string;
+    text: string;
+    origin: string;
+    size: string;
+    age: string;
+    palette: string;
+    detailImage: IFixedSizedAsset;  
+  };
   galleryCollection: {
     items: IFixedSizedAsset[];
   };
 }
 
+export interface IReference {
+  title: string;
+  subtitle: string;
+  excerpt: string;
+  body: string;
+  definition: IReferenceDefintion;
+  detailImage: IFixedSizedAsset;
+  galleryItems: IFixedSizedAsset[];
+}
+
+export type TReferenceDefintionKey = 'name' | 'origin' | 'size' | 'age' | 'location' | 'room' | 'placing';
+// export type TReferenceDefintion = Map<TReferenceDefintionKey, string>;
+
+export interface IReferenceDefintion {
+  name: string;
+  origin: string;
+  size: string;
+  age: string;
+  location: string;
+  room: string;
+  placing: string | null;
+}
 export interface IRug {
   name: string;
   text: string;
   origin: string;
   palette: string[] | null;
+  detailImage: IAsset;
 }

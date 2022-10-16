@@ -16,6 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["./components/*"],
+      "@data/*": ["./data/*"],
+      "@lib/*": ["./lib/*"],
       "~/*": ["./public/*"]
     },
     "incremental": true,

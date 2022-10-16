@@ -13,11 +13,11 @@ interface HeroProps {
 export const Hero: FC<HeroProps> = ({ heading, imageUrl, alText }) => {
   const img = changeImageFormat(imageUrl);
   return (
-    <div className={clsxm('container mx-auto relative', styles.hero)}>
+    <div className={clsxm('container mx-auto relative pb-16', styles.hero)}>
       <div
         className={clsxm(
           styles.heroImg,
-          'relative',
+          'relative shadow-xl shadow-slate-300',
           'aspect-square',
           'md:aspect-[2/1]'
         )}
@@ -34,7 +34,7 @@ export const Hero: FC<HeroProps> = ({ heading, imageUrl, alText }) => {
       <div
         className={clsxm(
           styles.heroCaption,
-          'bg-primary',
+          'bg-primary shadow-xl shadow-slate-500',
           'opacity-90',
           'p-8 lg:p-8 xl:p-12 2xl:p-16',
           'text-white text-xl lg:text-3xl font-title leading-relaxed lg:leading-tight',

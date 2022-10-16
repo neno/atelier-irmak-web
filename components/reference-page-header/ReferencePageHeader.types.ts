@@ -1,6 +1,7 @@
-import { IFixedSizedAsset } from 'types';
+import { IFixedSizedAsset, IReferenceDefintion } from 'types';
 
 export interface IReferencePageHeaderProps {
-  assets: IFixedSizedAsset[],
-  text: string;
+  assets: IFixedSizedAsset[];
+  heading: string;
+  definition: IReferenceDefintion;
 }

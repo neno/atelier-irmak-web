@@ -2,13 +2,9 @@ import Link from 'next/link';
 import React, { FC } from 'react';
 import { LinkWrapperProps } from './LinkWrapper.types';
 
-export const LinkWrapper: FC<LinkWrapperProps> = ({
-  children,
-  slug,
-  category = 'referenzen',
-}) => {
+export const LinkWrapper: FC<LinkWrapperProps> = ({ children, path }) => {
   return (
-    <Link href={`/${category}/${slug}`}>
+    <Link href={`${path}`}>
       <a>{children}</a>
     </Link>
   );
