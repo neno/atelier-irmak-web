@@ -4,6 +4,7 @@ import { References } from '@components/references/References';
 import { IPage } from 'types';
 import { fetchHomePage } from 'lib/api';
 import Teaser from '@components/teasers/Teaser';
+import { ContentContainer } from '@components/content-container';
 
 const Home: NextPage<{ page: IPage }> = ({
   page: {
@@ -39,10 +40,13 @@ const Home: NextPage<{ page: IPage }> = ({
           }}
         />
       ))}
-
-      {latestReferencesCollection.items.length > 0 && (
-        <References references={latestReferencesCollection.items} />
-      )}
+      <div className='mt-[-8rem]'>
+        <ContentContainer>
+          {latestReferencesCollection.items.length > 0 && (
+            <References references={latestReferencesCollection.items} />
+          )}
+        </ContentContainer>
+      </div>
 
       <Teaser
         type='Der fliegende Teppich'

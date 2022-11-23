@@ -40,10 +40,20 @@ export const Footer = () => {
 
             <ul className='my-8 leading-relaxed'>
               <li itemProp='email'>
-                <a href='mailto:info@atelier-irmak.ch'>info@atelier-irmak.ch</a>
+                <a
+                  href='mailto:info@atelier-irmak.ch'
+                  className='text-white hover:text-light underline'
+                >
+                  info@atelier-irmak.ch
+                </a>
               </li>
               <li itemProp='phone'>
-                <a href='tel:+41313120604'>Tel: +41 31 312 06 04</a>
+                <a
+                  href='tel:+41313120604'
+                  className='text-white hover:text-light underline'
+                >
+                  Tel: +41 31 312 06 04
+                </a>
               </li>
             </ul>
           </article>

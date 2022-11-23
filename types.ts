@@ -6,6 +6,12 @@ export interface IPage {
   flyingCarpetSection: IReferenceItem;
 }
 
+export interface IHomepage {
+  teaserKompetenzen: ITeaser;
+  teaserReferenzen: ITeaser;
+  latestReferencesCollection: IReferenceCollection;
+}
+
 export interface IReferenzenPage {
   page: {
     heading: string;
@@ -39,12 +45,12 @@ export interface IReferenceItem {
 }
 
 export interface TeasersCollection {
-  items: TeasersCollectionItem[];
+  items: ITeaser[];
 }
 
 export type TeaserType = 'Kompetenz' | 'Referenz' | 'Der fliegende Teppich';
 
-export interface TeasersCollectionItem {
+export interface ITeaser {
   slug: string;
   type: TeaserType;
   title: string;
@@ -64,6 +70,7 @@ export interface IReferenceQueryData {
   subtitle: string;
   excerpt: string;
   body: string;
+  description: any;
   location: string;
   room: string;
   placing: string | null;
@@ -86,6 +93,7 @@ export interface IReference {
   subtitle: string;
   excerpt: string;
   body: string;
+  description: any;
   definition: IReferenceDefintion;
   detailImage: IFixedSizedAsset;
   galleryItems: IFixedSizedAsset[];
@@ -109,4 +117,11 @@ export interface IRug {
   origin: string;
   palette: string[] | null;
   detailImage: IAsset;
+}
+
+export interface IKompetenzenPage {
+  heading: string;
+  lead: string;
+  body: JSON;
+  hero: IAsset;
 }

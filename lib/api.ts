@@ -1,3 +1,4 @@
+import { IKompetenzenPage } from './../types';
 import { getReferenceBySlugQuery } from './../graphql/reference-by-slug.query';
 import { referencePageQuery } from 'graphql/reference-page.query';
 import { referencePathsQuery } from 'graphql/reference-paths.query';
@@ -11,6 +12,7 @@ import {
 } from 'types';
 import { homePageQuery } from '../graphql/home-page.query';
 import { mapDataToReference } from './helpers';
+import { kompetenzenPageQuery } from 'graphql/kompetenzen-page-query';
 
 const headers = {
   Authorization: `Bearer ${process.env.CONTENTFUL_API_KEY}`,
@@ -62,4 +64,9 @@ export async function getReferenceBySlug(
   } = await fetchData(query);
 
   return mapDataToReference(items?.[0]);
+}
+
+export async function fetchKompetenzenPage(): Promise<IKompetenzenPage> {
+  const { landingpage } = await fetchData(kompetenzenPageQuery);
+  return { ...landingpage };
 }

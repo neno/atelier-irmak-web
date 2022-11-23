@@ -4,6 +4,7 @@ import { fetchReferencePage } from 'lib/api';
 import { IReferenzenPage } from 'types';
 import { References } from '@components/references/References';
 import { PageHeading } from '@components/page-heading/PageHeading';
+import { ContentContainer } from '@components/content-container';
 
 const Referenzen: NextPage<IReferenzenPage> = ({
   page,
@@ -12,7 +13,9 @@ const Referenzen: NextPage<IReferenzenPage> = ({
   return (
     <>
       <PageHeading heading={page.heading} />
-      <References references={referenceCollection.items} />
+      <ContentContainer>
+        <References references={referenceCollection.items} />
+      </ContentContainer>
     </>
   );
 };

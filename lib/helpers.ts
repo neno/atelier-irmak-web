@@ -30,6 +30,7 @@ export function mapDataToReference(data: IReferenceQueryData): IReference {
     title,
     subtitle,
     excerpt,
+    description,
     location,
     room,
     placing,
@@ -52,8 +53,14 @@ export function mapDataToReference(data: IReferenceQueryData): IReference {
     subtitle,
     excerpt,
     body: text,
+    description,
     definition: defList,
     detailImage: detailImage,
     galleryItems: items,
   };
+}
+
+export function truncate(str: string, length = 110) {
+  const truncated = str.substring(0, length);
+  return `${truncated}...`;
 }

@@ -8,6 +8,7 @@ export const getReferenceBySlugQuery = (slug: string) => `
           title
           subtitle
           excerpt
+          description {json}
           location
           room
           placing
