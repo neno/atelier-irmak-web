@@ -1,5 +1,5 @@
 {
-  "name": "atelier-irmak-nextjs16",
+  "name": "atelier-irmak-web",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -23,5 +23,6 @@
     "@tailwindcss/postcss": "^4",
     "tailwindcss": "^4",
     "@biomejs/biome": "2.2.0"
-  }
+  },
+  "packageManager": "pnpm@10"
 }
